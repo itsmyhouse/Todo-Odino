@@ -1,0 +1,1 @@
+document.body.appendChild(function(){const n=document.querySelector("#container");return n.innerHTML="prova webpack ",n}());
