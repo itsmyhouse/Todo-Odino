@@ -4,8 +4,10 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/index.js',
-        print: './src/print.js',
+        todo: './src/todo.js',
+        todoPage : './src/todoPage.js',
     },
+    devtool: 'inline-source-map',
     devServer: {
       static: './dist',
     },
