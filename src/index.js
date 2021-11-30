@@ -1,13 +1,12 @@
-import {TodoPage} from './todoPage.js';
-import {Todo} from './todo.js';
+import {Todo, MyTodo, todoBox} from './todo.js';
 import './style.css';
 
 const container = document.querySelector('#container');
 
-const todoPage = new TodoPage();
+const myTodo = new MyTodo();
 const fakeTodo = new Todo("try to do")
 fakeTodo.text = "somthing here";
-todoPage.add(fakeTodo);
+myTodo.add(fakeTodo);
 
 function doTopStrip() {
   
@@ -23,12 +22,17 @@ function doTopStrip() {
 
   const btnNewTodo = document.createElement("button");
   btnNewTodo.innerText = "create";
-  btnNewTodo.addEventListener("click", addBoxTodo);
+  btnNewTodo.addEventListener("click", createTodo);
 
-  function addBoxTodo(event) {
+function createTodo(event) {
     const newTodo = new Todo(inputTitle.value);
     newTodo.text = textArea.value;
-    const box = todoBox(newTodo);
+    myTodo.add(newTodo);
+    addBoxTodo(newTodo);
+}
+
+  function addBoxTodo(aTodo) {
+    const box = todoBox(aTodo);
     container.appendChild(box);
   }
 
@@ -40,22 +44,6 @@ function doTopStrip() {
   return topStrip;  
 }
 
-function todoBox(todo) {
-
-  const todoBox = document.createElement("div");
-  todoBox.classList.add("box");
-  
-  const title = document.createElement("h2");
-  title.innerText = todo.title;
-  
-  const para = document.createElement("p");
-  para.innerText = todo.text;
-
-  todoBox.appendChild(title);
-  todoBox.appendChild(para);
-
-  return todoBox;
-}
 
   container.appendChild(doTopStrip());
   container.appendChild(todoBox(fakeTodo));

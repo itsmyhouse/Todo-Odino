@@ -1,19 +1,19 @@
 import { Todo } from './todo.js';
 
-function TodoPage() {
+/* function MyTodo() {
     this.todos = [];
 }
 
-TodoPage.prototype.add = function(todo) {
+MyTodo.prototype.add = function(todo) {
     this.todos.push(todo);
 }
 
-TodoPage.prototype.remove = function(index) {
+MyTodo.prototype.remove = function(index) {
     this.todos.splice(index, 1);
 }
 
-TodoPage.prototype.indexOf = function(todo) {
+MyTodo.prototype.indexOf = function(todo) {
     return this.todos.indexOf(todo);
-}
+} */
 
-export { TodoPage };
+// export { MyTodo };
