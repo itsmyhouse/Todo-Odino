@@ -19,19 +19,22 @@ function doTopStrip() {
   const inputTitle = document.createElement("input");
   inputTitle.setAttribute("type", "text");
 
+  const textArea = document.createElement("textarea");
+
   const btnNewTodo = document.createElement("button");
   btnNewTodo.innerText = "create";
   btnNewTodo.addEventListener("click", addBoxTodo);
 
   function addBoxTodo(event) {
-    const newTodo = new Todo(inputTitle.text);
-    newTodo.text = "working in progress ...";
+    const newTodo = new Todo(inputTitle.value);
+    newTodo.text = textArea.value;
     const box = todoBox(newTodo);
     container.appendChild(box);
   }
 
   topStrip.appendChild(label);
   topStrip.appendChild(inputTitle);
+  topStrip.appendChild(textArea);
   topStrip.appendChild(btnNewTodo);
 
   return topStrip;  
